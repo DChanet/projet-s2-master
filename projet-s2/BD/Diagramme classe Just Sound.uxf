@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text>Space for diagram notesUse case 1</help_text>
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>648</x>
+      <y>16</y>
+      <w>168</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Just Sound
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>904</x>
+      <y>112</y>
+      <w>272</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Launchpad
+--
+-nom: string
+-id : int
+--
++CreateFromID(id : int) : Partie
++Enregistrer() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>272</x>
+      <y>128</y>
+      <w>320</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Partie
+--
+-Nom du joueur: string
+/Score: int
+-id : int
+--
++Enregistrer() : void
++CreateFromID(id : int) : Partie</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>944</x>
+      <y>352</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Touche
+--
+-value: int
+-idSon: int
+-idLaunch : int
+--
++CreateFromID(id : int) : Partie
++Enregistrer() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>272</x>
+      <y>312</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Musique
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>312</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Son
+--
+#id :int
+#Lien: string
+#no : string
+#duree : int
+--
++CreateFromID(id : int) : Partie
++Enregistrer() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>488</x>
+      <y>584</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Note
+--
+-score : int
+-id : int
+-temps : float
+--
++CreateFromID(id : int) : Partie
++Enregistrer() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>152</x>
+      <y>552</y>
+      <w>192</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>la durée est exprimé en Seconde</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1000</x>
+      <y>256</y>
+      <w>104</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=0..1
+r1=- Le LaunchPad
+m2=9
+r2=- Les Touches
+Composer ^</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>736</x>
+      <y>384</y>
+      <w>224</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+r1=- Le Son
+m2=*
+r2=- La Touche
+&lt; jouer</panel_attributes>
+    <additional_attributes>10.0;20.0;260.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>496</y>
+      <w>392</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=*
+r1=- Les Notes
+m2=1
+r2=- La Touche
+concerner ^</panel_attributes>
+    <additional_attributes>10.0;220.0;400.0;220.0;400.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>184</x>
+      <y>216</y>
+      <w>104</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=*
+r1=- Les Parties
+m2=1
+r2=- La Musique
+concerner v</panel_attributes>
+    <additional_attributes>110.0;20.0;30.0;20.0;30.0;200.0;110.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>216</x>
+      <y>456</y>
+      <w>112</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>808</x>
+      <y>48</y>
+      <w>384</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=*
+r1=- Les Just Sound
+m2=*
+r2=- Les LaunchPads
+associer &gt;
+</panel_attributes>
+    <additional_attributes>10.0;20.0;350.0;20.0;350.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>24</y>
+      <w>320</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2=1
+r2=- Just Sound
+m1=*
+r1=- Les Parties
+effectuer v</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;20.0;380.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>328</x>
+      <y>456</y>
+      <w>320</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=[Qualification]-
+m1=*
+r1=- Les Musiques
+m2=1..*
+r2=- Les Notes
+posseder v
+</panel_attributes>
+    <additional_attributes>40.0;10.0;40.0;110.0;310.0;110.0;310.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>352</x>
+      <y>464</y>
+      <w>24</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>528</x>
+      <y>384</y>
+      <w>64</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>lt=.
+</panel_attributes>
+    <additional_attributes>10.0;200.0;10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>672</y>
+      <w>256</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>pastille
+--
+-/apparition : float
+-static vitesse : float
+-id : int
+--
++afficherPastille(PosX : float, PosY : float) : void
++BougerPastille(x : float, y : float) : void
++CreateFromID(id : int) : Partie
++Enregistrer() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1048</x>
+      <y>592</y>
+      <w>248</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Réussite
+--
+-message: string
+-time : float
+--
+AfficherRésultat(posX : float, posY : float): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>960</x>
+      <y>656</y>
+      <w>104</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=.
+</panel_attributes>
+    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>616</y>
+      <w>280</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+r1= - la note
+m2=1
+r2=- la pastille
+Composer ^</panel_attributes>
+    <additional_attributes>330.0;20.0;10.0;20.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>432</x>
+      <y>344</y>
+      <w>160</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
